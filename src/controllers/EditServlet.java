@@ -30,7 +30,8 @@ public class EditServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
         // 該当のIDのタスク1件のみをデータベースから取得
@@ -44,7 +45,7 @@ public class EditServlet extends HttpServlet {
 
         // タスクデータが存在しているときのみ
         // タスクIDをセッションスコープに登録
-        if(m != null) {
+        if (m != null) {
             request.getSession().setAttribute("task_id", m.getId());
         }
 

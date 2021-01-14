@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Task;
 
-
 /**
  * Servlet implementation class NewServlet
  */
@@ -29,7 +28,8 @@ public class NewServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         // CSRF対策
         request.setAttribute("_token", request.getSession().getId());
 
